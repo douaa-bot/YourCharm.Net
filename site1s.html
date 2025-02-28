@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Your Charm </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+}
+
+/* Navigation */
+.navbar {
+            background: #1a1a1a !important;
+            padding: 1rem;
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .nav-link {
+            color: white !important;
+            position: relative;
+            margin: 0 1rem;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: pink;
+            bottom: -5px;
+            left: 0;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+
+
+
+
+/* Wrapper du slider */
+.slider-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+/* Slides */
+.slides {
+    display: flex;
+    width: 300%;  /* Largeur totale (3 slides) */
+    height: 100%;
+    animation: slideAnimation 14s infinite ease-in-out;
+}
+/* Chaque slide occupe 100% */
+.slide {
+    width: 100%;
+    flex: 0 0 100%;
+}
+/* Images */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+@keyframes slideAnimation {
+    0%, 20% { transform: translateX(0); }         
+    25%, 50% { transform: translateX(-100%); }    
+    55%, 75% { transform: translateX(-200%); } 
+}
+
+.slider-container {
+    margin-top: 100px; 
+    width: 800px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+/* Conteneur principal */
+.products-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Grille de produits */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+/* Carte de produit */
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column; 
+    height: 450px; 
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(255, 105, 180, 0.4);
+}
+
+/* Image du produit */
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+}
+
+/* Conteneur des informations du produit */
+.product-info {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    padding: 15px;
+    height: 100%
+}
+
+/* Prix du produit */
+.product-price {
+    margin: 2px 0;
+    padding: 5px;
+    text-align: center; 
+    height: 30px
+}
+
+/* Bouton "Ajouter au panier" */
+.product-button {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: auto; 
+    align-self: center; 
+    width: 90%; 
+    margin-bottom: 10px; 
+}
+.card-title{
+    height: 70px;
+}
+
+
+.product-button:hover {
+    background: #ff1493;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+.footer-column ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: black;
+}
+/* Bouton WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-button img {
+    width: 40px;
+    height: 40px;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand monlogo" href="#">Your Charm</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="site1s.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="site1s3.html">Collection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="site1s1.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="site1s4.html">Mon panier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.instagram.com/gasbijoux/">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <div class="slides">
+                <div class="slide">
+                    <img src="https://normjewels.com/cdn/shop/files/Slider2_Deneme-2-1_1000x.jpg?v=1698869351" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.media.amplience.net/i/pandora/Q125_eStore_Val_Social_Model_07?fmt=auto&qlt=80&crop={0%},{13.22%},{94.89%},{67.36%}" alt="Slide 2">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.media.amplience.net/i/pandora/Q125_eStore_Valentines_ExplodingBox_02_Extended?fmt=auto&qlt=80&crop={55.75%},{26.55%},{23.35%},{41.74%}" alt="Slide 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+     <!-- Section Produits -->
+     <section class="products-section ">
+        <h2 class="text-center mb-4">Nos Best-Sellers</h2>
+        <div class=" products-grid">
+                <div class="card  ">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwf50b068a/productimages/singlepackshot/166574C01_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"  class="product-image" alt="Produit">
+                    <div class="product-info ">
+                        <h5 class=" card-title">Bague Explosion d'Amour</h5>
+                        <p class="product-price ">Prix: 90 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+            
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwa2141aae/productimages/singlepackshot/563516C01_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Bracelet Maille Serpent Fermoir Coeur Arbre Génealogique</h5>
+                        <p class="product-price">Prix: 179 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+
+                <div class="card ">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw46988d74/productimages/singlepackshot/188421C03_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body">
+                        <h5 class="card-title">Bague Coeur Surélevé Scintillant</h5>
+                        <p class="product-price">Prix: 99 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card ">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwd9fc9e0f/productimages/singlepackshot/193000C01_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Bague Herbier Scintillant</h5>
+                        <p class="product-price">Prix: 80 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwcd77057f/productimages/singlepackshot/BD2410_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Collier Composé Coeurs Imbriqués & Charm Coeur Vert Opalescent</h5>
+                        <p class="product-price">Prix: 150 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw508afdea/productimages/singlepackshot/163362C00_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Bague Coeur Pavée Ondulée</h5>
+                        <p class="product-price">Prix: 99 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwd6e63d86/productimages/singlepackshot/282407C01_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Clous d'Orailles Herbier Scintillant</h5>
+                        <p class="product-price">Prix: 140 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwbaa8c714/productimages/singlepackshot/B89E2329.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Ensemble Petites Créoles à Charms</h5>
+                        <p class="product-price">Prix: 70 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw953c449a/productimages/singlepackshot/193510C01_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Bague Noeud Rose Scintillant</h5>
+                        <p class="product-price">Prix: 179 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw7fa6a5f7/productimages/singlepackshot/363052C00_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body">
+                        <h5 class="card-title">Collier Chaine à Maillons Allongés</h5>
+                        <p class="product-price">Prix: 166 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwbd6aa263/productimages/singlepackshot/299532C00_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Boucles d'Oreilles Créoles à Charms</h5>
+                        <p class="product-price">Prix: 60 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw8d2398e6/productimages/main/586292CZ_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Bracelet Maille Serpent Fermoir Coeur Pavé</h5>
+                        <p class="product-price">Prix: 10 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwd1132ee7/productimages/singlepackshot/363167C01_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Collier Perle de Culture d'eau Douce Traitée</h5>
+                        <p class="product-price">Prix: 160 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw84b2b453/productimages/singlepackshot/398425C01_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Collier Coeur Surélevé</h5>
+                        <p class="product-price">Prix: 185 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw616ac662/productimages/singlepackshot/198421C02_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body ">
+                        <h5 class="card-title">Bague Coeur Rouge Surélevé</h5>
+                        <p class="product-price">Prix: 80 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://fr.pandora.net/dw/image/v2/BFCR_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw627b4c8a/productimages/singlepackshot/561469C01_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"   class="product-image" alt="Produit">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bracelet Rivière Scintillant</h5>
+                        <p class="product-price">Prix: 79 €</p>
+                        <button class="product-button">Ajouter au panier</button>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>EXPLORER</h4>
+                <ul>
+                    <li><a href="#">*Be Love : être amour</a></li>
+                    <li><a href="#">Bijoux</a></li>
+                    <li><a href="#">Charms</a></li>
+                    <li><a href="#">Bracelets</a></li>
+                    <li><a href="#">Cadeaux</a></li>
+                    <li><a href="#">Bijoux gravables</a></li>
+                    <li><a href="#">Guide des tailles</a></li>
+                    <li><a href="#">Plan du site</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>SERVICE CLIENT</h4>
+                <ul>
+                    <li><a href="#">Nous contacter</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Livraison</a></li>
+                    <li><a href="#">Échanges et retours</a></li>
+                    <li><a href="#">Click & Collect</a></li>
+                    <li><a href="#">Prix en ligne et en boutique</a></li>
+                    <li><a href="#">*Conditions des offres en cours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>PROGRAMME DE FIDÉLITÉ</h4>
+                <ul>
+                    <li><a href="#">My Charm</a></li>
+                    <li><a href="#">Avantages</a></li>
+                    <li><a href="#">Points</a></li>
+                    <li><a href="#">Historique de commandes</a></li>
+                    <li><a href="#">Liste de souhaits</a></li>
+                    <li><a href="#">Mes tailles</a></li>
+                    <li><a href="#">Préférences</a></li>
+                    <li><a href="#">Carnet d'adresses</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>POLITIQUE CLIENT</h4>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Paramètres des cookies</a></li>
+                    <li><a href="#">Politique des cookies</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">Protection des données</a></li>
+                    <li><a href="#">Conditions générales de vente</a></li>
+                    <li><a href="#">Plateforme ODR</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>À PROPOS DE Nous</h4>
+                <ul>
+                    <li><a href="#">Trouver une boutique</a></li>
+                    <li><a href="#">Notre Société </a></li>
+                    <li><a href="#">Carrières</a></li>
+                    <li><a href="#">Devenir affilié YOURCHARM</a></li>
+                    <li><a href="#">Index égalité Femme/Homme</a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="https://wa.me/212771373251" target="_blank" class="whatsapp-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        <p>&copy; Your Charm Bijoux - Tous droits réservés</p>
+    </footer>
+       
+</body>
+</html>
